@@ -32,8 +32,8 @@ def handleSpeech():
 		
 		# Get a response to the input text 
 		response = chatbot.get_response(text)
-		trainer.raw_text = response
-		execfile("trainer.py")
+		#trainer.raw_text = response
+		#execfile("trainer.py") 
 		# LSTM.raw_text = text // LSTM.main()<< could do this to use the neural net in the future
 		recc = response
 
