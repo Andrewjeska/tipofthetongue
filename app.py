@@ -3,6 +3,10 @@ from flask import render_template,request, jsonify
 from tornado.wsgi import WSGIContainer
 from tornado.httpserver import HTTPServer
 from tornado.ioloop import IOLoop
+
+import io
+from chatterbot import ChatBot
+
 import trainer
 import os
 
@@ -26,8 +30,14 @@ def handleSpeech():
 		execfile("trainer.py")
 		return jsonify({})
 	else:
-		LSTM.raw_text = text
-		recc = LSTM.main()
+		chatbot = ChatBot('Charlie')
+		
+		# Get a response to the input text 
+		response = chatbot.get_response(text)
+		trainer.raw_text = response
+		execfile("trainer.py")
+		# LSTM.raw_text = text // LSTM.main()<< could do this to use the neural net in the future
+		recc = response
 
 		return jsonify({'recc': recc})
 
