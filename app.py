@@ -4,7 +4,7 @@ from tornado.wsgi import WSGIContainer
 from tornado.httpserver import HTTPServer
 from tornado.ioloop import IOLoop
 import io
-
+import trainer
 import os
 
 app = Flask(__name__)
@@ -23,11 +23,12 @@ def handleSpeech():
 
 	#print(p);
 	if isUser == "true":
-		#store in model
+		trainer.raw_text = text
+		execfile("trainer.py")
 		return jsonify({})
 	else:
-		f = io.StringIO(text)
-		#generate reccomendation
+		LSTM.raw_text = text
+		execfile("LSTM.py")
 		recc = "Hi, My name is Michael"
 
 		return jsonify({'recc': recc})
