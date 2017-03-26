@@ -1,4 +1,6 @@
-
+anaconda-client==1.6.0
+anaconda-navigator==1.5
+anaconda-project==0.4.1
 ChatterBot==0.6.0
 chatterbot-corpus==0.0.1
 
