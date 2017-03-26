@@ -16,8 +16,6 @@ import threading
 import requests
 
 
-
-
 app = Flask(__name__)
 
 @app.route("/test")
@@ -49,9 +47,6 @@ def handleSpeech():
 
 		print recc['text'] 
 
-		
-
-		
 
 		return jsonify({'recc': recc['text']})
 
@@ -60,12 +55,14 @@ def handleSpeech():
 
 def set_interval(func, sec):
 	print 'starting interval'
-  def func_wrapper():
-      set_interval(func, sec)
-      func()
-  t = threading.Timer(sec, func_wrapper)
-  t.start()
-  return t
+  
+	def func_wrapper():
+  	set_interval(func, sec)
+  	func()
+
+	t = threading.Timer(sec, func_wrapper)
+	t.start()
+	return t
 
 def keep_app_alive():
 	requests.get('http://tipofthetongue.herokuapp.com/')
