@@ -14,3 +14,17 @@ Flask==0.11.1
 websocket-client==0.37.0
 Werkzeug==0.11.10
 whitenoise==3.2
+
+
+
+
+numpy==1.11.3
+numpydoc==0.6.0
+
+
+scipy==0.18.1
+
+tensorflow==1.0.1
+
+Theano==0.9.0
+
