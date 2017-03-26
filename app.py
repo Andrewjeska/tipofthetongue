@@ -26,16 +26,16 @@ def handleSpeech():
 
 	#print(p);
 	if isUser == "true":
-		trainer.raw_text = text
-		execfile("trainer.py")
+		
+		trainer.main(text)
 		return jsonify({})
 	else:
 		chatbot = ChatBot('Charlie')
 		
 		# Get a response to the input text 
 		response = chatbot.get_response(text)
-		trainer.raw_text = response
-		execfile("trainer.py")
+		#trainer.raw_text = response
+		#execfile("trainer.py")
 		# LSTM.raw_text = text // LSTM.main()<< could do this to use the neural net in the future
 		recc = response
 
