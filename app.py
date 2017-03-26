@@ -28,8 +28,7 @@ def handleSpeech():
 		return jsonify({})
 	else:
 		LSTM.raw_text = text
-		execfile("LSTM.py")
-		recc = "Hi, My name is Michael"
+		recc = LSTM.main()
 
 		return jsonify({'recc': recc})
 
