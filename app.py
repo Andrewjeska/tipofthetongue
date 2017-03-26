@@ -38,6 +38,8 @@ def handleSpeech():
 		#execfile("trainer.py")
 		# LSTM.raw_text = text // LSTM.main()<< could do this to use the neural net in the future
 		recc = response
+		print type(recc)
+		print recc
 
 		return jsonify({'recc': recc})
 
