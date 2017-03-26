@@ -3,7 +3,6 @@ from flask import render_template,request, jsonify
 from tornado.wsgi import WSGIContainer
 from tornado.httpserver import HTTPServer
 from tornado.ioloop import IOLoop
-import io
 import trainer
 import os
 
