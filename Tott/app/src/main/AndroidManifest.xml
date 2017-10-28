@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.michaelanderjaska.tott">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="com.google.android.glass.permission.DEVELOPMENT" />
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="19" />
+
+    <application
+
+        android:allowBackup="true"
+
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name="com.example.michaelanderjaska.tott.LiveCardMenuActivity"
+            android:theme="@style/MenuTheme"
+            android:enabled="true">
+        </activity>
+
+        <activity
+            android:name="com.example.michaelanderjaska.tott.ListeningActivity"
+            android:theme="@style/MenuTheme"
+            android:enabled="true">
+
+        </activity>
+
+
+
+        <service
+            android:name="com.example.michaelanderjaska.tott.LiveCardService"
+            android:icon="@drawable/ic_glass_logo"
+            android:label="@string/title_activity_live_card_service">
+            <intent-filter>
+                <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.google.android.glass.VoiceTrigger"
+                android:resource="@xml/voice_trigger_hint" />
+        </service>
+
+
+
+    </application>
+
+</manifest>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HINT</string>
+    <string name="title_activity_live_card_service">Hello World LiveCard</string>
+    <string name="action_stop">Stop</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="recc_text_view">You could say...  </string>
+    <string name="hint_voice_trigger">HINT</string>
+    <string name="loading">Processing...</string>
+</resources>
